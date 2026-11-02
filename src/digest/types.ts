@@ -19,7 +19,7 @@ export type DigestRow = {
   runs: number; // every parsed line for this job
   retries: number; // this job's `retry` lines
   lastStatus: RunStatus;
-  lastError: string | null; // `error` of the job's last line, null when it has none
+  lastError: string | null; // the most recent `error` the job had, even if a later line succeeded; null if it never had one
   firstAt: string;
   lastAt: string;
 };
