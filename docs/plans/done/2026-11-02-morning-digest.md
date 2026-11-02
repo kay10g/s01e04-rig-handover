@@ -1,6 +1,6 @@
 ---
 plan: morning-digest
-status: ready
+status: done
 owner: rook
 opened: 2026-10-29
 ---
@@ -77,3 +77,18 @@ page again with `LANE_MARKER` unset (the banner reads "no marker set") and uploa
 link. Move this plan to `docs/plans/done/` with its issue list.
 
 Done when: the preview link no longer shows the lane marker.
+
+## Issues
+
+| # | Issue | Blocked by | Worker | Closed |
+|---|-------|-----------|--------|--------|
+| 1 | Digest: DigestRow type and readNight signature | — | claude-code · sonnet-5.5 · default | 2026-11-02 |
+| 2 | Digest: run log reader | #1 | claude-code · sonnet-5.5 · default | 2026-11-02 |
+| 3 | Digest page: GET /digest/:night | #1 (done when needs #2) | claude-code subagent · sonnet-5.5 · medium | 2026-11-02 |
+| 4 | Digest JSON: GET /api/digest/:night | #1 (done when needs #2, #3) | claude-code subagent · sonnet-5.5 · medium | 2026-11-02 |
+| 5 | Status board links each night to its digest | #1 (done when needs #2) | claude-code subagent · sonnet-5.5 · medium | 2026-11-02 |
+| 6 | Route tests for digest page and JSON | #1 (done when needs #3, #4) | claude-code subagent · sonnet-5.5 · medium | 2026-11-02 |
+| 7 | Preview for review | #2, #3 | claude-code · sonnet-5.5 · default | 2026-11-02 |
+| 8 | Clean up preview and plan | #7, the reviewer's review | claude-code · sonnet-5.5 · default | 2026-11-02 |
+
+#7 was closed once before the reviewer looked and reopened; it closed again after the course reported the review was in. The preview was re-saved without the lane marker and the Pages repo history was replaced by one commit. See ADR 0003.
